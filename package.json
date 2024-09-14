@@ -5,7 +5,7 @@
   "scripts": {
     "react-start": "npm run start --prefix interface-frontend",
     "electron-start": "cross-env NODE_ENV=development electron .",
-    "dev": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && npm run electron-start\"",
+    "dev": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:5173 && npm run electron-start\"",
     "build-react": "npm run build --prefix interface-frontend",
     "electron-build": "electron-builder",
     "build": "npm run build-react && npm run electron-build"
