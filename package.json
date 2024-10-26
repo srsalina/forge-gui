@@ -4,12 +4,12 @@
   "main": "main/main.js",
   "scripts": {
     "react-start": "npm run start --prefix interface-frontend",
-    "electron-start": "cross-env NODE_ENV=development electron .",
-    "dev": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:5173 && npm run electron-start\"",
+    "electron-start": "cross-env NODE_ENV=development DISPLAY=:99 electron .",
+    "dev": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:5173 && sleep 2 && npm run electron-start\" --raw",
     "build-react": "npm run build --prefix interface-frontend",
     "electron-build": "electron-builder",
     "build": "npm run build-react && npm run electron-build"
-  },
+  },  
   "build": {
     "appId": "com.example.forgegui",
     "files": [
